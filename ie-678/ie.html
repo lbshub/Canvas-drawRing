@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>百分比圆环进度条</title>
+	<style type="text/css">
+		*{ margin:0; padding:0;}
+	</style>
+	<script type="text/javascript">
+		if (!document.addEventListener) {
+		    //excanvas.js 让 IE6~IE8 支持canvas
+		    document.write('<script type="text/javascript" src="excanvas.js"><\/script>');	
+		}
+	</script>
+</head>
+<body>
+
+<script type="text/javascript" src="drawRing.ie.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+
+	for(var i = 0; i < 101; i++){
+		drawRing({
+			// animated: true,
+			width: 80,
+			radius: 35,
+			perent: i
+		});
+	}
+
+	// console.time('用时');
+	drawRing({
+		animated: true,
+		width: 200,
+		radius: 90,
+	 	arc: 10,
+		perent: 100,
+		color: ['#ccc','#f30'],
+		textColor: '#f30',
+		textSize: '40px',
+		after: function(){
+			// console.timeEnd('用时');
+			alert('绘制完成')
+		}
+	});
+
+};
+</script>
+
+</body>
+</html>
